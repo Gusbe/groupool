@@ -1,11 +1,6 @@
 # Groupool
 
 
-
-# ![Captura de pantalla 2019-05-03 a las 16.57.19](/Users/damian/Desktop/APP MODULO 2/Captura de pantalla 2019-05-03 a las 16.57.19.png)
-
-
-
 ## Description
 
 Make football pools with yours friends.
