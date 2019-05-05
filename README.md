@@ -35,57 +35,57 @@ Make football pools with yours friends.
 ## ROUTES:
 
 - GET /
-  -- renders the log in page.
-  -- redirects to  /groups if user is logged. 
+  - renders the log in page.
+  - redirects to  /groups if user is logged. 
 
 - POST  /
-  -- Check if the user and passport is correct and starts the session.
+  - Check if the user and passport is correct and starts the session.
 
 - GET /signup
-  -- redirects to  /groups if user is logged. 
-  -- renders the signup page.
+  - redirects to  /groups if user is logged. 
+  - renders the signup page.
 
 - POST /signup
-  -- redirects to  /groups if user is logged. 
-  -- validate unique email and required content.
-  -- body:
-    --- username
-    --- password
+  - redirects to  /groups if user is logged. 
+  - validate unique email and required content.
+  - body:
+    - username
+    - password
 
 - GET /groups
-  -- renders the groups page.
+  - renders the groups page.
 
 - GET  /groups/create
-  -- renders the create group form. 
-  -- body:
-    --- Group name 
+  - renders the create group form. 
+  - body:
+    -- Group name 
 
 - POST /groups/create
-  -- validate that the field is correct. 
-  -- render the group information page.
+  - validate that the field is correct. 
+  - render the group information page.
 
 - GET /groups/join
-  -- renders the join group form.
+  - renders the join group form.
 
 - POST /groups/join
-  -- validate the fields are corrects. 
-  -- redirect to the group page.
+  - validate the fields are corrects. 
+  - redirect to the group page.
 
 - GET /group/:id
-  -- next to 404 if services:id is not valid or doesnt'exist.
-  -- renders the group  page.
+  - next to 404 if services:id is not valid or doesnt'exist.
+  - renders the group  page.
 
 - GET /round/:id
-  -- if the round has results then render the round results page. 
-  -- if there isn't results and the user doesn't have a bet then render the bet page.
-  -- if there isn't results and the user has a bet then render the see bet page.
+  - if the round has results then render the round results page. 
+  - if there isn't results and the user doesn't have a bet then render the bet page.
+  - if there isn't results and the user has a bet then render the see bet page.
 
 - POST /round/:id
   - validate that all the games have a bet and save the settings of the bet.  
 
 - GET /logout/:id
-  -- close the session.
-  -- redirects to login page. 
+  - close the session.
+  - redirects to login page. 
 
     
 ## Models
