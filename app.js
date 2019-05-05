@@ -3,15 +3,29 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let session = require('express-session');
+let mongoose = require('mongoose');
 
 let indexRouter = require('./routes/index');
 
-const mongoose = require('mongoose');
+// Connection mongoDB
 mongoose.connect('mongodb://localhost/groupool')
   .then(() => console.log('Connected to mongo!'))
   .catch(() => console.log('Problem connecting with mongo...'));
 
 let app = express();
+
+// Session control
+let passport = require('./config/passport-config'); // passport module setup and initial load
+let passportStrategySetup = require('./config/passport-local-strategy');
+app.use(session({
+  secret: 'groupool will be cool',
+  resave: true,
+  saveUninitialized: true
+}));
+passport.use(passportStrategySetup);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
