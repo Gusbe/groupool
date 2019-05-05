@@ -58,7 +58,7 @@ Make football pools with yours friends.
 - GET  /groups/create
   - renders the create group form. 
   - body:
-    -- Group name 
+    - Group name 
 
 - POST /groups/create
   - validate that the field is correct. 
