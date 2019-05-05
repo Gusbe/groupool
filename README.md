@@ -1,167 +1,95 @@
 # Groupool
 
 
-
-# ![Captura de pantalla 2019-05-03 a las 16.57.19](/Users/damian/Desktop/APP MODULO 2/Captura de pantalla 2019-05-03 a las 16.57.19.png)
-
-
-
 ## Description
 
 Make football pools with yours friends.
 
 
-
 ## User 
 
-- Login .
-- Log out .
-- Sing up.
-- Create a group .
-- Join a group.
-- See a group ranking .
-- Make a bet .
-- See his own bets. 
-- See results.
-- See ranking round.
-- 
+- Login
+- Log out
+- Sing up
+- Create a group
+- Join a group
+- See a group ranking
+- Make a bet
+- See his own bets
+- See results
+- See ranking round
+
 
 ## Backlog
 
-List of other features outside of the MVPs scope
+- Api development
+- Edit user settings
+- Invite a user to a group by mail.
+- Ranking graph
+- Choose european league
+- Log in with passport
+- Profile picture from Gmail
+- Improve Design
 
-Services details:
-
-- Api development.
-
-- Edit user settings.
-
-- Invite a user to a group by mail. 
-
-- Ranking graph. 
-
-- Choose european league. 
-
-- Log in with passport.
-
-- Profile picture from Gmail. 
-
-- Improve Design. 
-
-  
 
 ## ROUTES:
 
 - GET /
-
-  - renders the log in page.
-  - redirects to  /groups if user is logged. 
+  -- renders the log in page.
+  -- redirects to  /groups if user is logged. 
 
 - POST  /
-
-  - Check if the user and passport is correct and starts the session.
-
-    
+  -- Check if the user and passport is correct and starts the session.
 
 - GET /signup
-
-  - redirects to  /groups if user is logged. 
-  - renders the signup page.
+  -- redirects to  /groups if user is logged. 
+  -- renders the signup page.
 
 - POST /signup
-
-  - redirects to  /groups if user is logged. 
-
-  - validate unique email and required content.
-
-  - body:
-
-    - username
-    - password
-
-    
+  -- redirects to  /groups if user is logged. 
+  -- validate unique email and required content.
+  -- body:
+    --- username
+    --- password
 
 - GET /groups
-
-  - renders the groups page.
-
-    
+  -- renders the groups page.
 
 - GET  /groups/create
-
-  - renders the create group form. 
-
-  - body:
-
-    - Group name 
-
-    
+  -- renders the create group form. 
+  -- body:
+    --- Group name 
 
 - POST /groups/create
-
-  - validate that the field is correct. 
-  - render the group information page.
+  -- validate that the field is correct. 
+  -- render the group information page.
 
 - GET /groups/join
-
-  - renders the join group form.
-
-    
+  -- renders the join group form.
 
 - POST /groups/join
-
-  - validate the fields are corrects. 
-  - redirect to the group page.
-
-- POST /services/create
-
-  - redirects to / if user is anonymous
-
-  - body:
-
-    - group name
-
-    - group pin
-
-      
-
-    
+  -- validate the fields are corrects. 
+  -- redirect to the group page.
 
 - GET /group/:id
-
-  - next to 404 if services:id is not valid or doesnt'exist.
-
-  - renders the group  page.
-
-    
-
-  
+  -- next to 404 if services:id is not valid or doesnt'exist.
+  -- renders the group  page.
 
 - GET /round/:id
-
-  - if the round has results then render the round results page. 
-
-  - if there isn't results and the user doesn't have a bet then render the bet page.
-
-  - if there isn't results and the user has a bet then render the see bet page.
-
-    
+  -- if the round has results then render the round results page. 
+  -- if there isn't results and the user doesn't have a bet then render the bet page.
+  -- if there isn't results and the user has a bet then render the see bet page.
 
 - POST /round/:id
-
-  - validate that all the matchs have a bet and save the settings of the bet. 
-
-    
+  - validate that all the games have a bet and save the settings of the bet.  
 
 - GET /logout/:id
-
-  - close the session.
-
-  - redirects to login page. 
+  -- close the session.
+  -- redirects to login page. 
 
     
-
 ## Models
+
 
 User model
 
@@ -171,67 +99,60 @@ password: String, required
 
 ```
 
-Groups
+Group model
 
 ```
 name: String
-users: [Array user_id]
 pin: String
-```
-
- Matchs
+users: [ Users ]
 
 ```
-round: String 
-local_team: String
-visitor_team: String 
+
+Game model
+
+```
+round: Number, required
+team_local: String, required
+team_visitor: String, required
 goals_local: Number
-goals_visitors: Number
+goals_visitor: Number
+date: Date, required
 ```
 
-
-
- Bets
+Bet model
 
 ```
-user_id: Number 
-match_id: Number
-result: Enum{1,x,2} * 
-
-```
-
-
-
- Raking 
-
-```
-user_id: Number
-score: Number
+user: User 
+game: Game
+result: Enum['1','X','2'], required
 
 ```
 
+Raking model 
 
+```
+user: User
+group: Group
+score: Number, default: 0
 
- 
-
+```
 
 
 ## Links
 
+
 ### Trello
 
-[Link to your trello board](<https://trello.com/b/JLvNM127/modulo2>) or picture of your physical board
+[Trello board](<https://trello.com/b/JLvNM127/modulo2>)
+
 
 ### Git
 
-The url to your repository and to your deployed project
+Repository link:
 
-[Repository Link](<https://github.com/damianrgues/M2-Project>)
+[Repository Link](<https://github.com/gusbe/groupool>)
 
-[Deploy Link](http://heroku.com/)
 
 ### Slides
 
-The url to your presentation slides
-
-[Slides Link](https://docs.google.com/presentation/d/186eToj1yVpao763ZHkkzjG-qDM3fbzf2VmzJVm122ms/edit?usp=sharing)
+[Slides Link](https://docs.google.com/)
