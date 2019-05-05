@@ -39,28 +39,32 @@ router.get('/signup', (req, res, next) => {
 
 // POST '/signup'
 router.post('/signup', (req, res, next) => {
-  const { username, password } = req.body;
-
-  if (username === '' || password === '') {
-    res.render('signup', { errorMessage: 'Write your username and password' });
+  if (req.user) {
+    res.redirect('/groups');
   } else {
-    User.findOne({ username: username })
-      .then((user) => {
-        if (!user) {
-          if (zxcvbn(password).score < 3) {
-            res.render('signup', { errorMessage: 'The password is too weak' });
-          } else {
-            const salt = bcrypt.genSaltSync(10);
-            const hashedPassword = bcrypt.hashSync(password, salt);
+    const { username, password } = req.body;
 
-            User.create({ username: username, password: hashedPassword })
-              .then(() => res.redirect('/'))
-              .catch((err) => console.log(err));
+    if (username === '' || password === '') {
+      res.render('signup', { errorMessage: 'Write your username and password' });
+    } else {
+      User.findOne({ username: username })
+        .then((user) => {
+          if (!user) {
+            if (zxcvbn(password).score < 3) {
+              res.render('signup', { errorMessage: 'The password is too weak' });
+            } else {
+              const salt = bcrypt.genSaltSync(10);
+              const hashedPassword = bcrypt.hashSync(password, salt);
+
+              User.create({ username: username, password: hashedPassword })
+                .then(() => res.redirect('/'))
+                .catch((err) => console.log(err));
+            }
+          } else {
+            res.render('signup', { errorMessage: 'The username is already taken' });
           }
-        } else {
-          res.render('signup', { errorMessage: 'The username is already taken' });
-        }
-      });
+        });
+    }
   }
 });
 
