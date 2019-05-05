@@ -7,7 +7,9 @@ let logger = require('morgan');
 let indexRouter = require('./routes/index');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/groupool');
+mongoose.connect('mongodb://localhost/groupool')
+  .then(() => console.log('Connected to mongo!'))
+  .catch(() => console.log('Problem connecting with mongo...'));
 
 let app = express();
 
