@@ -30,7 +30,11 @@ router.post('/login', passport.authenticate('local', {
 
 // GET '/signup'
 router.get('/signup', (req, res, next) => {
-  res.render('signup');
+  if (req.user) {
+    res.redirect('/groups');
+  } else {
+    res.render('signup');
+  }
 });
 
 // POST '/signup'
