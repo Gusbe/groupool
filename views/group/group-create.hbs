@@ -1,14 +1,21 @@
 <div>
-<h2>Create Group</h2>
-<form action="/group-create" method="post">
-Groupname: <input type="text" name="groupname">
+    <h2>Create Group</h2>
 
-<button type="submit">Create</button>
+    <form action="/group/create" method="post">
+    Groupname: <input type="text" name="groupname">
+    </form>
 
+    <button type="submit">Create</button>
 </div>
 
-<div>
+
+{{#if }}
+    <div>
     <img src="" alt="">
-    <h2>Groupname: {{pachanga}}</h2>
-    <p> PIN: {{pin}}</p>
-</div>
+    <h2>Groupname: {{Group.name}}</h2>
+    <h4> PIN: {{Group.pin}}</h4>
+    </div>
+{{/if}}
+
+
+    
