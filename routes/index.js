@@ -21,7 +21,7 @@ router.get('/login', (req, res, next) => {
 
 // POST '/login'
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/groups',
+  successRedirect: '/group',
   failureRedirect: '/login',
   passReqToCallback: true
 }));
@@ -29,7 +29,7 @@ router.post('/login', passport.authenticate('local', {
 // GET '/signup'
 router.get('/signup', (req, res, next) => {
   if (req.user) {
-    res.redirect('/groups');
+    res.redirect('/group');
   } else {
     res.render('signup');
   }
@@ -38,7 +38,7 @@ router.get('/signup', (req, res, next) => {
 // POST '/signup'
 router.post('/signup', (req, res, next) => {
   if (req.user) {
-    res.redirect('/groups');
+    res.redirect('/group');
   } else {
     const { username, password } = req.body;
 
@@ -49,7 +49,7 @@ router.post('/signup', (req, res, next) => {
         .then((user) => {
           if (!user) {
             // if (zxcvbn(password).score < 3) {
-            if (true) { // Change to make the score validation works
+            if (1 === 0) { // Change to make the score validation works
               res.render('signup', { errorMessage: 'The password is too weak' });
             } else {
               const salt = bcrypt.genSaltSync(10);
