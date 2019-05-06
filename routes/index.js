@@ -6,10 +6,8 @@ let passport = require('passport');
 let ensureLogin = require('connect-ensure-login');
 
 // Routes
-const groupsRouter = require('./groups.js');
 const groupRouter = require('./group.js');
 const roundRouter = require('./round.js');
-router.use('/groups', groupsRouter);
 router.use('/group', groupRouter);
 router.use('/round', roundRouter);
 
