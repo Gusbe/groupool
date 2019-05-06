@@ -21,7 +21,7 @@ router.get('/login', (req, res, next) => {
   res.render('login');
 });
 
-// POST '/'
+// POST '/login'
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/groups',
   failureRedirect: '/login',
@@ -72,11 +72,6 @@ router.post('/signup', (req, res, next) => {
 // GET '/logout'
 router.get('/logout', (req, res, next) => {
   // Close the session. Redirect to login page
-});
-
-// TEST '/secret'
-router.get('/secret', ensureLogin.ensureLoggedIn(), (req, res) => {
-  console.log('i am in secret');
 });
 
 // GET '/'
