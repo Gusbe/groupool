@@ -29,7 +29,7 @@ router.post('/login', passport.authenticate('local', {
 // GET '/signup'
 router.get('/signup', (req, res, next) => {
   if (req.user) {
-    res.redirect('/groups');
+    res.redirect('/group');
   } else {
     res.render('signup');
   }
@@ -38,7 +38,7 @@ router.get('/signup', (req, res, next) => {
 // POST '/signup'
 router.post('/signup', (req, res, next) => {
   if (req.user) {
-    res.redirect('/groups');
+    res.redirect('/group');
   } else {
     const { username, password } = req.body;
 
