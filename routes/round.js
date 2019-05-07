@@ -17,14 +17,19 @@ router.get('/:roundNumber', ensureLogin.ensureLoggedIn(), (req, res, next) => {
         // Passed round
         res.render('round/round-past');
       } else {
-        console.log('user: ' + req.user._id);
-        console.log('game[0]._id: ' + game[0]._id);
         Bet.findOne({ $and: [{ user: req.user._id }, { game: game[0]._id }] }).countDocuments()
           .then((counter) => {
             if (counter === 0) {
               res.render('round/round-next', { gameList: game, roundNumber });
             } else {
-              res.render('round/round-next-sended', { gameList: game, roundNumber });
+              console.log('req.user._id: ' + req.user._id);
+              console.log('roundNumber: ' + roundNumber);
+
+              Bet.find({ $and: [{ user: req.user._id }, { round: roundNumber }] })
+                .then((bets) => {
+                  res.render('round/round-next-sended', { gameList: game, roundNumber, betList: bets });
+                })
+                .catch();
             }
           })
           .catch((err) => console.log(err));
@@ -47,9 +52,9 @@ router.post('/:roundNumber', ensureLogin.ensureLoggedIn(), (req, res, next) => {
         let arrayResults = [game0, game1, game2, game3, game4, game5, game6, game7, game8, game9];
 
         game.forEach((match, i) => {
-          Bet.create({ user: req.user._id, result: arrayResults[i], game: match._id })
+          Bet.create({ user: req.user._id, result: arrayResults[i], game: match._id, round: roundNumber })
             .then(() => {
-
+              res.redirect(`/round/${roundNumber}`);
             })
             .catch((err) => console.log(err));
         });
