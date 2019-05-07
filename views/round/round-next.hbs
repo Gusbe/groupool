@@ -1,19 +1,39 @@
 <div>
-  <h2>Pachanga</h2>  {{!-- nombre del grupo --}}
+  <h2>Pachanga</h2>
   <h3>Round</h3>
   <div>
     <p>1</p> <p>X</p> <p>2</p>
   </div>
-    
+  
+
+
   <div>
-    <form action="">
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
+    <form action="/group/{{numRound}}">
+
+      {{#each gameList}}
+        {{this.team_local}}
+        <div>
+          <img src="" alt="">
+          <p></p>
+            <input type="radio" id="gameChoice1-{{@index}}" name="game{{@index}}" value="1">
+            <label for="gameChoice1-{{@index}}">1</label>
+
+            <input type="radio" id="gameChoiceX-{{@index}}" name="game{{@index}}" value="X">
+            <label for="gameChoiceX-{{@index}}">X</label>
+
+            <input type="radio" id="gameChoice2-{{@index}}" name="game{{@index}}" value="2">
+            <label for="gameChoice2-{{@index}}">2</label>
+
+          <img src="" alt="">
+          <p></p>
+        </div>
+
+      {{/each}}
+
+
+
+
+
 
       <div>
         <img src="" alt="">

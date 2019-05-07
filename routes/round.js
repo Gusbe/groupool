@@ -16,15 +16,21 @@ router.get('/:roundNumber', (req, res, next) => {
         // Passed round
         res.render('round/round-past');
       } else {
-        res.render('round/round-next');
+        res.render('round/round-next', { gameList: game });
       }
     })
     .catch((err) => console.log(err));
 });
 
 // POST '/round/:id'
-router.post('/:id', (req, res, next) => {
-  // validate that all the matchs have a bet and save the settings of the bet.
+router.post('/:roundNumber', (req, res, next) => {
+  const { roundNumber } = req.params;
+
+  Games.find({ round: roundNumber }).sort({ date: 1 })
+    .then((game) => {
+      console.log('game: ' + game);
+    })
+    .catch((err) => console.log(err));
 });
 
 module.exports = router;
