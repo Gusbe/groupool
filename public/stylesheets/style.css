@@ -17,7 +17,7 @@ a {
 }
 
 h2{
-  color:white;
+  color:rgb(19, 19, 19);
 }
 
 h1{
@@ -74,8 +74,24 @@ h1{
   display: inline;
   text-align: center;
 }
+.container-login{
 
+ 
+
+  
+  display: flex;
+  flex-flow: column wrap;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 100%;
+  height: 100%;
+  padding: 20vh; 
+}
 .container {
+  position: relative;
+  top: -13.9vh;
+  background-color: white;
   margin-top:100px;
   display: flex;
   flex-flow: column wrap;
@@ -83,8 +99,16 @@ h1{
   justify-content: space-around;
   align-items: center;
   flex: 1 100%;
+  height: 100%;
+  padding: 20vh;
+  
+ 
 }
 
+.container-web {
+  height: 1000px;
+  width: 100%;
+}
 
 .form-signup {
   font: white;
@@ -106,9 +130,10 @@ h1{
   justify-content: space-around;
   display: flex;
   text-align: center;
-  background-color: beige;
+  background-color: rgb(255, 255, 255);
   border-radius:5px;
   width: 100%;
+  
   margin: 0;
   padding:0;
   border:0;
@@ -160,7 +185,7 @@ h1{
 }
 
 
-/* 
+
 
 * {
   box-sizing: border-box;
@@ -168,13 +193,13 @@ h1{
 
 body {
   margin: 0px;
-  font-family: 'segoe ui';
+  font-family: 'Helvetica', sans-serif;
 }
 
 .nav {
-  height: 50px;
+  height: 60px;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: #33a018;
   position: relative;
 }
 
@@ -186,7 +211,7 @@ body {
   display: inline-block;
   font-size: 22px;
   color: #fff;
-  padding: 10px 10px 10px 10px;
+  padding: 15px 10px 10px 10px;
 }
 
 .nav > .nav-btn {
@@ -201,7 +226,7 @@ body {
 
 .nav > .nav-links > a {
   display: inline-block;
-  padding: 13px 10px 13px 10px;
+  padding: 18px 10px 13px 10px;
   text-decoration: none;
   color: #efefef;
 }
@@ -228,7 +253,7 @@ body {
     padding: 13px;
   }
   .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(11, 148, 32, 0.3);
   }
   .nav > .nav-btn > label > span {
     display: block;
@@ -240,7 +265,7 @@ body {
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #333;
+    background-color: rgb(55, 143, 10);
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
@@ -258,4 +283,4 @@ body {
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
-} */
+} 
