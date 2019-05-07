@@ -7,7 +7,8 @@ const betSchema = new Schema({
 
   user: { type: Schema.Types.ObjectId, ref: 'User' },
   result: { type: String, enum: ['1', 'X', '2'] },
-  game: { type: Schema.Types.ObjectId, ref: 'Game' }
+  game: { type: Schema.Types.ObjectId, ref: 'Game' },
+  group: { type: Schema.Types.ObjectId, ref: 'Group' }
 
 });
 
