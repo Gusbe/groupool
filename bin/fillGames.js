@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Games = require('../models/game');
 
-mongoose.connect(`mongodb://localhost/groupool`);
+mongoose.connect('mongodb://localhost/groupool');
 
 const gamesArray = [
   {
@@ -64,14 +64,13 @@ const gamesArray = [
     team_visitor: 'Real Madrid',
     date: '2019-05-12'
   }
-
 ];
 
 Games.create(gamesArray, (err) => {
   if (err) { throw (err); }
   console.log(`Created ${gamesArray.length} games`);
 });
-/*
+
 const gamesArrayPast = [
   {
     round: 36,
@@ -159,7 +158,3 @@ Games.create(gamesArrayPast, (err) => {
   if (err) { throw (err); }
   console.log(`Created ${gamesArrayPast.length} games`);
 });
-
-mongoose.connection.close();
-
-*/
