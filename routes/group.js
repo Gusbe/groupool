@@ -2,10 +2,9 @@ let express = require('express');
 let router = express.Router();
 let ensureLogin = require('connect-ensure-login');
 
-// GET '/group'
-router.get('/', (req, res, next) => {
-  // Renders the groups page
-});
+// Models
+const User = require('./../models/user.js');
+const Group = require('./../models/group.js');
 
 // GET '/group/create'
 router.get('/create', ensureLogin.ensureLoggedIn(), (req, res) => {
@@ -70,11 +69,12 @@ router.get('/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
 
 // GET '/group'
 router.get('/', ensureLogin.ensureLoggedIn(), (req, res) => {
-  Group.find({ users: req.user._id })
-    .then((groups) => {
-      // Groups is an array of objects "group" (name, _id)
-    })
-    .catch((err) => console.log(err));
+  res.render('group/groups');
+  // Group.find({ users: req.user._id })
+  //   .then((groups) => {
+  //     // res.render('group');
+  //   })
+  //   .catch((err) => console.log(err));
 });
 
 module.exports = router;
