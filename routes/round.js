@@ -26,13 +26,18 @@ router.get('/:roundNumber', (req, res, next) => {
 // POST '/round/:id'
 router.post('/:roundNumber', (req, res, next) => {
   const { roundNumber } = req.params;
-  console.log(req.body);
   const { game0, game1, game2, game3, game4, game5, game6, game7, game8, game9 } = req.body;
 
-  Games.find({ round: roundNumber }).sort({ date: 1 })
-    .then((game) => {
-    })
-    .catch((err) => console.log(err));
+  if (game0 === undefined || game1 === undefined || game2 === undefined || game3 === undefined || game4 === undefined ||
+      game5 === undefined || game6 === undefined || game7 === undefined || game8 === undefined || game9 === undefined) {
+    res.render('round/round-next', { errorMessage: 'You have to make a prediction in all games' });
+  } else {
+    Games.find({ round: roundNumber }).sort({ date: 1 })
+      .then((game) => {
+
+      })
+      .catch((err) => console.log(err));
+  }
 });
 
 module.exports = router;
