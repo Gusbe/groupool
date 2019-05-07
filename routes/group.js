@@ -18,19 +18,41 @@ router.post('/create', (req, res, next) => {
 });
 
 // GET '/group/join'
-router.get('/join', (req, res, next) => {
-  // renders the join group form.
+router.get('/join', ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render('group/group-join');
 });
 
 // POST '/group/join'
-router.post('/join', (req, res, next) => {
-  // Validates that the field is correct. Redirect to the group page.
+router.post('/join', ensureLogin.ensureLoggedIn(), (req, res) => {
+  const { groupName, pin } = req.body;
+
+  if (groupName === '' || pin === '') {
+    res.render('group/group-join', { errorMessage: 'Write the group name and the pin' });
+  } else {
+    Group.findOneAndUpdate({ $and: [ { name: groupName }, { pin: pin }, { users: { $ne: req.user._id } } ] }, { $push: { users: req.user._id } })
+      .then((group) => {
+        res.redirect(`/group/${group._id}`);
+      })
+      .catch((err) => console.log(err));
+  }
 });
 
 // GET '/group/:id'
-router.get('/:id', (req, res, next) => {
-  // Renders the group page from id.
-  // next to 404 if services:id is not valid or doesnt'exist.
+router.get('/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
+  Group.findOne({ $and: [ { _id: req.params.id }, { users: req.user._id } ] })
+    .then((group) => {
+      // WILL PRINT THE GLOBAL RANKING AND THE BUTTONS TO BET OR GO TO PASSED ROUND
+    })
+    .catch((err) => console.log(err));
+});
+
+// GET '/group'
+router.get('/', ensureLogin.ensureLoggedIn(), (req, res) => {
+  Group.find({ users: req.user._id })
+    .then((groups) => {
+      // Groups is an array of objects "group" (name, _id)
+    })
+    .catch((err) => console.log(err));
 });
 
 module.exports = router;
