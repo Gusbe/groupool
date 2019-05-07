@@ -16,7 +16,8 @@ router.get('/:roundNumber', (req, res, next) => {
         // Passed round
         res.render('round/round-past');
       } else {
-        res.render('round/round-next', { gameList: game });
+        console.log('roundNumber: ' + roundNumber);
+        res.render('round/round-next', { gameList: game, roundNumber });
       }
     })
     .catch((err) => console.log(err));
@@ -25,10 +26,11 @@ router.get('/:roundNumber', (req, res, next) => {
 // POST '/round/:id'
 router.post('/:roundNumber', (req, res, next) => {
   const { roundNumber } = req.params;
+  console.log(req.body);
+  const { game0, game1, game2, game3, game4, game5, game6, game7, game8, game9 } = req.body;
 
   Games.find({ round: roundNumber }).sort({ date: 1 })
     .then((game) => {
-      console.log('game: ' + game);
     })
     .catch((err) => console.log(err));
 });
