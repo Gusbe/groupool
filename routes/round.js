@@ -11,7 +11,13 @@ router.get('/:roundNumber', (req, res, next) => {
   const { roundNumber } = req.params;
   Games.find({ round: roundNumber }).sort({ date: 1 })
     .then((game) => {
-      console.log('game: ' + game);
+      const dateRound = game[0].date;
+      if (dateRound <= Date.now()) {
+        // Passed round
+        res.render('round/round-past');
+      } else {
+        res.render('round/round-next');
+      }
     })
     .catch((err) => console.log(err));
 });
