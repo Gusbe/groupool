@@ -1,9 +1,21 @@
-<h2>Login</h2>
+
+<div class="container">
+<h1>Groupool</h1>
 
 
-<form action="/login" method="post">
-Username: <input type="text" name="username">
-Password: <input type="text" name="password">
-<button type="submit">Login</button>
+<div class="form-label-group">
 
-</form>
+  <form action="/login" method="post">
+  <input class="input" type="text" name="username" placeholder="username">
+  
+  <input class="input" type="text" name="password" placeholder="password">
+  
+  <div id="div-btn-signup">
+  <button class="btn" type="submit">Login</button>
+
+  <a id="singup" href="/signup"><p>Or sign up</p></a>
+  </div>
+
+  </form>
+</div>
+</div>

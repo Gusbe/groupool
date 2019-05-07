@@ -1,8 +1,106 @@
+
+
+
 body {
-  padding: 50px;
+  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: rgb(42,111,70);
+  background: linear-gradient(0deg, rgba(42,111,70,1) 0%, rgba(35,176,21,1) 47%, rgba(0,255,132,1) 100%);
 }
 
 a {
   color: #00B7FF;
+}
+
+h2{
+  color:white;
+}
+
+h1{
+  font-size: 80px;
+  font-family: Helvetica, sans-serif;
+  color: white;
+}
+.btn {
+  margin-left: 100px;
+  margin-top: 20px;
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+  
+}
+
+.form-label-group {
+  
+  position: relative;
+  margin-right: 60px;
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  
+}
+
+#singup {
+  font-size: 15px;
+  color:white;
+}
+
+.input {
+  font: white;
+  border-radius:5px;
+  padding:10px;
+  width:240px;
+  overflow:hidden;
+  border-style:groove;
+  opacity:0.5;
+  font-family:'Helvetica';
+  font-weight:400;
+  font-size:16px;
+  position:relative;
+  margin:10px;
+  border-radius: 2rem;
+  
+}
+
+#div-btn-signup {
+  display: inline;
+  text-align: center;
+}
+
+.container {
+  margin-top:100px;
+  display: flex;
+  flex-flow: column wrap;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 100%;
+}
+
+
+.form-signup {
+  font: white;
+  border-radius:5px;
+  padding:10px;
+  width:240px;
+  border-style:groove;
+  opacity:0.5;
+  font-weight:400;
+  font-size:16px;
+  position:relative;
+  margin:10px;
+}
+
+@media screen and (max-width:640px) {
+  /* reglas CSS */
+}
+@media screen and (max-width:1024px) and (min-width:640px) {
+  /* reglas CSS */
+}
+@media screen and (min-width:1024px) {
+  /* reglas CSS */
 }
