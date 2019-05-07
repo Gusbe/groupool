@@ -9,7 +9,11 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: rgb(10, 10, 11);
+}
+
+.title{
+  font-size: 40px;
 }
 
 h2{
@@ -96,8 +100,54 @@ h1{
 }
 
 
+.container-group {
+  flex-flow: column wrap;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  display: flex;
+  text-align: center;
+  background-color: beige;
+  border-radius:5px;
+  width: 100%;
+  margin: 0;
+  padding:0;
+  border:0;
 
+}
 
+.btn-grp {
+  align-content: center;
+  margin-top: 20px;
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+  
+}
+
+.btn-group2{
+  background-color: rgba(43, 194, 249, 0.68);
+  width: 30vh;
+  align-content: center;
+  margin-top: 20px;
+  font-size: 80%;
+  border-radius: 2rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+
+}
+
+.group-individual {
+  color-background: rgb(95, 95, 199);
+}
+
+.ul-gruop {
+  text-decoration: none;
+}
 
 @media screen and (max-width:640px) {
   /* reglas CSS */
