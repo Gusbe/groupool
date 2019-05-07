@@ -1,11 +1,25 @@
 let express = require('express');
 let router = express.Router();
 
+// Models
+const User = require('./../models/user.js');
+const Group = require('./../models/group.js');
+const Games = require('./../models/game.js');
+
 // GET '/round/:id'
-router.get('/:id', (req, res, next) => {
-  // if the round has results then render the round results page.
-  // if there isn't results and the user doesn't have a bet then render the bet page.
-  // if there isn't results and the user has a bet then render the see bet page.
+router.get('/:roundNumber', (req, res, next) => {
+  const { roundNumber } = req.params;
+  Games.find({ round: roundNumber }).sort({ date: 1 })
+    .then((game) => {
+      const dateRound = game[0].date;
+      if (dateRound <= Date.now()) {
+        // Passed round
+        res.render('round/round-past');
+      } else {
+        res.render('round/round-next');
+      }
+    })
+    .catch((err) => console.log(err));
 });
 
 // POST '/round/:id'
