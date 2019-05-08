@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Games = require('../models/game');
+require('dotenv').config();
 
 mongoose.connect(process.env.MONGODB_URI);
 
