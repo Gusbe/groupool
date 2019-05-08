@@ -8,7 +8,8 @@ const gameSchema = new Schema({
   team_visitor: { type: String, required: true },
   goals_local: { type: Number },
   goals_visitor: { type: Number },
-  date: { type: Date, required: true }
+  date: { type: Date, required: true },
+  result: { type: String }
 
 });
 

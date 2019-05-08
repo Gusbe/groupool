@@ -1,5 +1,5 @@
 <div>
-  <h2>Pachanga</h2>
+  <h2>Round {{roundNumber}}</h2>
   <h3>See results</h3>
 
   <select name="rounds-past" size="3">
@@ -11,99 +11,38 @@
   </select>
 
 
-  <div>
-      <p>1</p> <p>X</p> <p>2</p>
-  </div>
+<div>
 
-  <div>
-    <form action="">
+  {{#each gameList}}
+
+    <div>
       <div>
         <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
+        <p>{{this.team_local}}</p>
       </div>
-
+      <div>
+        <p>{{this.goals_local}} - {{this.goals_visitor}}</p>
+      </div>
       <div>
         <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
+        <p>{{this.team_visitor}}</p>
       </div>
+    </div>
 
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
+  {{/each}}
 
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
+</div>
 
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
-
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
-
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
-
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
-
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
-
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
-    </form>
-  </div>
 
   <h2>Raking Round x</h2>
 
-  <ol>
-    <li><p>Manolo</p><p>{{puntos}}</p></li>
-    <li><p>Pepe</p><p>{{puntos}}</p></li>
+
+ <ol>
+  {{#each userList}}
+ 
+    <li><p>{{this.username}}</p><p>{{puntos}}</p></li>
+    
+  {{/each}}
   </ol>
 
 

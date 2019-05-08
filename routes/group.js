@@ -58,6 +58,29 @@ router.post('/join', ensureLogin.ensureLoggedIn(), (req, res) => {
   }
 });
 
+// GET '/group/:id/remove'
+router.get('/:id/remove', ensureLogin.ensureLoggedIn(), (req, res) => {
+  Group.findOne({ $and: [ { _id: req.params.id }, { users: req.user._id } ] })
+    .then((group) => {
+      res.render('group/group-remove', { group });
+    })
+    .catch((err) => console.log(err));
+});
+
+// POST '/group/:id/remove'
+router.post('/:id/remove', ensureLogin.ensureLoggedIn(), (req, res) => {
+  Group.findOne({ $and: [ { _id: req.params.id }, { users: req.user._id } ] })
+    .then((group) => {
+      Group.deleteOne({ _id: req.params.id })
+        .then(() => {
+          group.message = 'The group has been deleted';
+          res.render('group/group-remove', { group });
+        })
+        .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
+});
+
 // GET '/group/:id'
 router.get('/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
   Group.findOne({ $and: [ { _id: req.params.id }, { users: req.user._id } ] })

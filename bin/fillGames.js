@@ -1,8 +1,34 @@
 const mongoose = require('mongoose');
 const Games = require('../models/game');
+const Users = require('../models/user');
 require('dotenv').config();
 
 mongoose.connect(process.env.MONGODB_URI);
+
+/*
+const usersArray = [
+  {
+    username: 'Uros',
+    password: 'xxxxxxxxxxx'
+  },
+  {
+    username: 'Axel',
+    password: 'xxxxxxxxxxx'
+  },
+  {
+    username: 'Jack',
+    password: 'xxxxxxxxxxx'
+  },
+  {
+    username: 'Gabriel',
+    password: 'xxxxxxxxxxx'
+  }
+];
+
+Users.create(usersArray, (err) => {
+  if (err) { throw (err); }
+  console.log(`Created ${usersArray.length} users`);
+}); */
 
 const gamesArray = [
   {
@@ -79,7 +105,8 @@ const gamesArrayPast = [
     team_visitor: 'CD Leganes',
     goals_local: 0,
     goals_visitor: 3,
-    date: '2019-05-03'
+    date: '2019-05-03',
+    result: '2'
   },
   {
     round: 36,
@@ -87,7 +114,8 @@ const gamesArrayPast = [
     team_visitor: 'Rayo Vallecano',
     goals_local: 4,
     goals_visitor: 1,
-    date: '2019-05-04'
+    date: '2019-05-04',
+    result: '1'
   },
   {
     round: 36,
@@ -95,7 +123,8 @@ const gamesArrayPast = [
     team_visitor: 'Atletico de Madrid',
     goals_local: 3,
     goals_visitor: 0,
-    date: '2019-05-04'
+    date: '2019-05-04',
+    result: '1'
   },
   {
     round: 36,
@@ -103,7 +132,8 @@ const gamesArrayPast = [
     team_visitor: 'Real Sociedad',
     goals_local: 0,
     goals_visitor: 1,
-    date: '2019-05-04'
+    date: '2019-05-04',
+    result: '2'
   },
   {
     round: 36,
@@ -111,7 +141,8 @@ const gamesArrayPast = [
     team_visitor: 'FC Barcelona',
     goals_local: 2,
     goals_visitor: 0,
-    date: '2019-05-04'
+    date: '2019-05-04',
+    result: '1'
   },
   {
     round: 36,
@@ -119,7 +150,8 @@ const gamesArrayPast = [
     team_visitor: 'Girona FC',
     goals_local: 2,
     goals_visitor: 0,
-    date: '2019-05-05'
+    date: '2019-05-05',
+    result: '1'
   },
   {
     round: 36,
@@ -127,7 +159,8 @@ const gamesArrayPast = [
     team_visitor: 'Real Betis',
     goals_local: 1,
     goals_visitor: 0,
-    date: '2019-05-05'
+    date: '2019-05-05',
+    result: '1'
   },
   {
     round: 36,
@@ -135,7 +168,8 @@ const gamesArrayPast = [
     team_visitor: 'Villareal CF',
     goals_local: 3,
     goals_visitor: 2,
-    date: '2019-05-05'
+    date: '2019-05-05',
+    result: '1'
   },
   {
     round: 36,
@@ -143,7 +177,8 @@ const gamesArrayPast = [
     team_visitor: 'Athletic Club',
     goals_local: 1,
     goals_visitor: 0,
-    date: '2019-05-05'
+    date: '2019-05-05',
+    result: '1'
   },
   {
     round: 36,
@@ -151,7 +186,8 @@ const gamesArrayPast = [
     team_visitor: 'Valencia',
     goals_local: 2,
     goals_visitor: 6,
-    date: '2019-05-05'
+    date: '2019-05-05',
+    result: '2'
   }
 ];
 

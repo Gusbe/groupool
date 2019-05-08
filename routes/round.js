@@ -13,9 +13,40 @@ router.get('/:roundNumber', ensureLogin.ensureLoggedIn(), (req, res, next) => {
   Games.find({ round: roundNumber }).sort({ date: 1 })
     .then((game) => {
       const dateRound = game[0].date;
-      if (dateRound <= Date.now()) {
+      // if (dateRound <= Date.now()) {
+      if (1 === 1) {
         // Passed round
-        res.render('round/round-past');
+        // We are getting ALL the users, not the users that belongs to one concrete group
+        User.find()
+          .then((users) => {
+            users.forEach((element, i) => {
+              Bet.find({ $and: [{ user: element._id }, { round: roundNumber }] })
+                .then((bets) => {
+                  if (!bets.length) {
+                    console.log('We dont have bets');
+                  } else {
+                    let score = 0;
+                    bets.forEach((singleBet) => {
+                      console.log('XXXXXXXXXX' + singleBet.round);
+                      // Take in game the result
+                      Games.findById(singleBet.game)
+                        .then((singleGame) => {
+                          // console.log('singleGame: ' + singleGame);
+                        })
+                        .catch((err) => console.log(err));
+                      // console.log('singleBet.result: ' + singleBet.result);
+                    });
+                    // singleBet.result = users[i].result;
+                  }
+                })
+                .catch((err) => console.log(err));
+
+              element._id = bets[i].result;
+            });
+
+            res.render('round/round-past', { gameList: game, userList: users });
+          })
+          .catch((err) => console.log(err));
       } else {
         Bet.findOne({ $and: [{ user: req.user._id }, { game: game[0]._id }] }).countDocuments()
           .then((counter) => {
