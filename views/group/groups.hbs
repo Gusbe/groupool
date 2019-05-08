@@ -1,1 +1,16 @@
-#Your groups list access
+<div class="container" >
+    <h2 class="title" >Your Groups</h2>
+    
+    <div class="container-group">
+      
+      {{#each groupList}}
+       <div><button class="btn-group2" ><a href="/group/{{this._id}}">{{this.name}}</a></button></div>
+      {{/each}}      
+      
+    </div>
+
+
+    <button class="btn-grp" ><a href="/group/create">Create</a></button>
+    <button class="btn-grp" ><a href="/group/join">Join</a></button></button>
+
+  </div>
