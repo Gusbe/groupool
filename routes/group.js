@@ -16,7 +16,7 @@ router.post('/create', ensureLogin.ensureLoggedIn(), (req, res) => {
   const groupName = req.body.groupname;
 
   if (groupName === '') {
-    res.render('group/group-create');
+    res.render('group/group-create', { errorMessage: 'Write the group name' });
   } else {
     User.findOne({ username: req.user.username })
       .then((user) => {
