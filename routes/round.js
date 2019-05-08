@@ -13,8 +13,7 @@ router.get('/:roundNumber', ensureLogin.ensureLoggedIn(), (req, res, next) => {
   Games.find({ round: roundNumber }).sort({ date: 1 })
     .then((game) => {
       const dateRound = game[0].date;
-      // if (dateRound <= Date.now()) {
-      if (1 === 1) {
+      if (dateRound <= Date.now()) {
         // Passed round
         // We are getting ALL the users, not the users that belongs to one concrete group
         User.find()
