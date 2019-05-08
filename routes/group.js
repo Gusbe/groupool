@@ -69,11 +69,10 @@ router.get('/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
 
 // GET '/group'
 router.get('/', ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render('group/groups');
   Group.find({ users: req.user._id })
     .then((groups) => {
       console.log('GROUPS: ' + groups);
-      res.render('/group/groups', { groupList: groups });
+      res.render('group/groups', { groupList: groups });
     })
     .catch((err) => console.log(err));
 });
