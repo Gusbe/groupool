@@ -30,7 +30,7 @@ router.post('/create', ensureLogin.ensureLoggedIn(), (req, res) => {
                 groupName: groupName,
                 pin: pin
               };
-              res.render('group/group-create', { data });
+              res.render('group/group-create', data);
             })
             .catch((err) => console.log(err));
         }
@@ -69,11 +69,10 @@ router.get('/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
 
 // GET '/group'
 router.get('/', ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render('group/groups');
+  console.log('In /group');
   Group.find({ users: req.user._id })
     .then((groups) => {
-      console.log('GROUPS: ' + groups);
-      res.render('/group/groups', { groupList: groups });
+      res.render('group/groups', { groupList: groups });
     })
     .catch((err) => console.log(err));
 });
