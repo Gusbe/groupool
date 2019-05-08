@@ -145,8 +145,12 @@ h1{
 
 }
 
+a {
+  text-decoration:none;
+}
 
 .btn-grp {
+  
   align-content: center;
   margin-top: 20px;
   font-size: 80%;

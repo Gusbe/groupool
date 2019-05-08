@@ -18,6 +18,9 @@
     <form action="/group/create" method="post">
     <input class="input" type="text" name="groupname" placeholder="name of the group">
   </div>
+  {{#if errorMessage}}
+  <p>{{errorMessage}}</p>
+  {{/if}}
   <button  button class="btn-jc" type="submit">Create your new group!</button>
   </form>
 
