@@ -85,7 +85,7 @@ router.post('/:id/remove', ensureLogin.ensureLoggedIn(), (req, res) => {
 router.get('/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
   Group.findOne({ $and: [ { _id: req.params.id }, { users: req.user._id } ] })
     .then((group) => {
-      // WILL PRINT THE GLOBAL RANKING AND THE BUTTONS TO BET OR GO TO PASSED ROUND
+      res.render('group/group', { group });
     })
     .catch((err) => console.log(err));
 });
