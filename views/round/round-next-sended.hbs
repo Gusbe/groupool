@@ -1,15 +1,15 @@
-<div>
-  <h2>Round {{roundNumber}}</h2>
+<div class="container">
+  <h2 >Round {{roundNumber}}</h2>
   <div>
     <p>1</p> <p>X</p> <p>2</p>
   </div>
   
 {{errorMessage}}
 
-  <div>
+  <div class="container-group">
       {{#each gameList}}
         
-        <div>
+        <div class="match">
           <img src="" alt="">
           <p>{{this.team_local}}</p>
           <p>Your prediction:{{this.result}}</p>

@@ -145,6 +145,7 @@ h1{
 
 }
 
+
 .btn-grp {
   align-content: center;
   margin-top: 20px;
@@ -155,6 +156,26 @@ h1{
   padding: 1rem;
   transition: all 0.2s;
   
+}
+
+.btn-jc {
+  position: relative;
+  left: -50px;
+  margin-left: 100px;
+  margin-top: 20px;
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.div-group-created {
+  display: flex;
+  align-content: center;
+  background-color: aquamarine;
+
 }
 
 .btn-group2{
@@ -177,6 +198,45 @@ h1{
 
 .ul-gruop {
   text-decoration: none;
+}
+
+.match {
+  position: relative;
+  width: 100%;
+  
+  display: flex;
+  align-content: center;
+  border: 1px solid rgba(111, 109, 109, 0.762);
+  border-radius: 5px;
+  margin:30px;
+  
+}
+.div-group-created {
+
+  position: relative;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  align-content: center;
+  border: 1px solid rgba(111, 109, 109, 0.762);
+  border-radius: 5px;
+  margin:30px;
+}
+
+.team1 {
+  margin: 20px;
+  width: 30%;
+}
+.pool{
+  position: relative;
+  top:30px;
+}
+.team2 {
+  margin: 20px;
+  width: 30%;
+}
+.teamName {
+  font-size: 17px;
 }
 
 @media screen and (max-width:640px) {

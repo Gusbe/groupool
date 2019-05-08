@@ -11,9 +11,15 @@
 
       {{#each gameList}}
         
-        <div>
-          <img src="" alt="">
-          <p>{{this.team_local}}</p>
+        <div class="match">
+
+          <div class="team1">
+            <img src="" alt="">
+            <p class="teamName">{{this.team_local}}</p>
+          </div>
+
+          <div class="pool">
+          
             <input type="radio" id="gameChoice1-{{@index}}" name="game{{@index}}" value="1" checked>
             <label for="gameChoice1-{{@index}}">1</label>
 
@@ -22,9 +28,13 @@
 
             <input type="radio" id="gameChoice2-{{@index}}" name="game{{@index}}" value="2">
             <label for="gameChoice2-{{@index}}">2</label>
+          </div>
 
+        <div class="team2">
           <img src="" alt="">
-          <p>{{this.team_visitor}}</p>
+          <p class="teamName">{{this.team_visitor}}</p>
+        </div>
+
         </div>
 
       {{/each}}

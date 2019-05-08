@@ -3,11 +3,13 @@
   
 
   {{#if groupName }}
-  <div>
+  
   <h2  class="title">group created</h2>
+  <div class="div-group-created">
   <img src="" alt="">
   <h3>Groupname: {{groupName}}</h3>
-  <h3> PIN: {{pin}}</h3>
+  </br>
+  <h3> PIN: {{pin}}</h3></div>
   </div>
 
 {{else}}
@@ -16,7 +18,7 @@
     <form action="/group/create" method="post">
     <input class="input" type="text" name="groupname" placeholder="name of the group">
   </div>
-  <button  button class="btn" type="submit">Create your new group!</button>
+  <button  button class="btn-jc" type="submit">Create your new group!</button>
   </form>
 
   {{/if}}
