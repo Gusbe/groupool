@@ -1,26 +1,36 @@
-<div>
-  <h2>Round {{roundNumber}}</h2>
-  <div>
-    <p>1</p> <p>X</p> <p>2</p>
-  </div>
+<div class="container">
+  <h2 class="title">Round {{roundNumber}}</h2>
+
   
 {{errorMessage}}
 
-  <div>
+  <div class="container-group">
+
       {{#each gameList}}
         
-        <div>
-          <img src="" alt="">
-          <p>{{this.team_local}}</p>
-          <p>Your prediction:{{this.result}}</p>
-          <img src="" alt="">
-          <p>{{this.team_visitor}}</p>
+        <div class="match">
+
+            <div class="team1">
+              <img src="{{this.picture_local}}" alt="">
+              <p class="teamName">{{this.team_local}}</p>
+            </div>
+
+            <div class="pool">
+              <p class="prediction">{{this.result}}</p>
+            </div>
+
+          <div class="team2">
+            <img src="{{this.picture_visitor}}" alt="">
+            <p class="teamName">{{this.team_visitor}}</p>
+          </div>
+
         </div>
 
       {{/each}}
       </div>
-      <button type="submit">Bet</button>
+      <a href="/group/{{groupId}}">
+        <button class="btn-group2" type="button">Return to Rounds</button>
+      </a>
       
-    </form>
   </div>
 </div>

@@ -1,5 +1,5 @@
-<div>
-  <h2>Pachanga</h2>
+<div class="container">
+  <h2 class="title">Round {{roundNumber}}</h2>
   <h3>See results</h3>
 
   <select name="rounds-past" size="3">
@@ -10,101 +10,55 @@
 
   </select>
 
+{{#each userList}}
+  {{this.username}}........{{this.score}}
+{{/each}}
 
-  <div>
-      <p>1</p> <p>X</p> <p>2</p>
-  </div>
 
-  <div>
-    <form action="">
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
+<div class="container-group">
+
+  {{#each gameList}}
+
+    <div class="match">
+      <div class="team1">
+        <img src="{{this.picture_local}}" alt="">
+        <p class="teamName">{{this.team_local}}</p>
       </div>
 
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
+      <div class="pool">
+        <p class="prediction">{{this.goals_local}} - {{this.goals_visitor}}</p>
       </div>
 
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
+      <div class="team2">
+        <img src="{{this.picture_visitor}}" alt="">
+        <p class="teamName">{{this.team_visitor}}</p>
       </div>
+    </div>
 
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
+  {{/each}}
 
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
+</div>
 
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
 
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
+  <h2>Raking Round {{roundNumber}}</h2>
 
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
 
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
-
-      <div>
-        <img src="" alt="">
-        <p></p>
-        <input type="text">
-        <img src="" alt="">
-        <p></p>
-      </div>
-    </form>
-  </div>
-
-  <h2>Raking Round x</h2>
-
-  <ol>
-    <li><p>Manolo</p><p>{{puntos}}</p></li>
-    <li><p>Pepe</p><p>{{puntos}}</p></li>
+ <ol class="score-list">
+  {{#each userList}}
+ 
+  <li>
+    <div class="score-row">
+      <div class="score-half-div"><p>{{this.username}}</p></div>
+      <div class="score-half-div"><p>Hits - {{this.score}}</p></div>
+    </div>
+  </li>
+    
+  {{/each}}
   </ol>
+
+  <a href="/group/{{groupId}}">
+    <button class="btn-group2" type="button">Return to Rounds</button>
+  </a>
 
 
 </div>

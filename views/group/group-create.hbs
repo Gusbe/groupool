@@ -1,18 +1,33 @@
 <div class="container" >
-  <h2 class="title">Create Group</h2>
-  <div class="container-group">
-    <form action="/group/create" method="post">
-    <input class="input" type="text" name="groupPin" placeholder="name of the group">
+  
+  
+
+  {{#if groupName }}
+  
+  <h2  class="title">Group created!</h2>
+  <div class="text-group-create"> Pass the group name and pin to your friends to join it</div></br></br></br>
+  <div class="mark">
+     <p class="text-group-create"><strong>Groupname:</strong> {{groupName}}</p>
+     <p class="text-group-create"><strong>PIN:</strong> {{pin}}</p>
   </div>
-  <button  button class="btn" type="submit">Create your new group!</button>
+
+       <div><button class="btn-group2" ><a href="/group">Back to your groups</a></button></div>   
+
+{{else}}
+<h2 class="title">Create Group</h2>
+<div class="container-group">
+    <form action="/group/create" method="post">
+    <input class="input" type="text" name="groupname" placeholder="Name of the group">
+    {{#if errorMessage}}
+      <p class="error-text">{{errorMessage}}</p>
+    {{/if}}
+  </div>
+  
+  <button  button class="btn-jc" type="submit">Create your new group!</button>
   </form>
+
+  {{/if}}
+
 </div>
 
 
-
-  <div>
-  <h3>group created</h3>
-  <img src="" alt="">
-  <h2>Groupname: pachanga</h2>
-  <h4> PIN: 12345</h4>
-  </div>

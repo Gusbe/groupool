@@ -30,7 +30,7 @@ router.post('/create', ensureLogin.ensureLoggedIn(), (req, res) => {
                 groupName: groupName,
                 pin: pin
               };
-              res.render('group/group-create', { data });
+              res.render('group/group-create', data);
             })
             .catch((err) => console.log(err));
         }
@@ -58,22 +58,44 @@ router.post('/join', ensureLogin.ensureLoggedIn(), (req, res) => {
   }
 });
 
+// GET '/group/:id/remove'
+router.get('/:id/remove', ensureLogin.ensureLoggedIn(), (req, res) => {
+  Group.findOne({ $and: [ { _id: req.params.id }, { users: req.user._id } ] })
+    .then((group) => {
+      res.render('group/group-remove', { group });
+    })
+    .catch((err) => console.log(err));
+});
+
+// POST '/group/:id/remove'
+router.post('/:id/remove', ensureLogin.ensureLoggedIn(), (req, res) => {
+  Group.findOne({ $and: [ { _id: req.params.id }, { users: req.user._id } ] })
+    .then((group) => {
+      Group.deleteOne({ _id: req.params.id })
+        .then(() => {
+          group.message = 'The group has been deleted';
+          res.render('group/group-remove', { group });
+        })
+        .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
+});
+
 // GET '/group/:id'
 router.get('/:id', ensureLogin.ensureLoggedIn(), (req, res) => {
   Group.findOne({ $and: [ { _id: req.params.id }, { users: req.user._id } ] })
     .then((group) => {
-      // WILL PRINT THE GLOBAL RANKING AND THE BUTTONS TO BET OR GO TO PASSED ROUND
+      res.render('group/group', { group });
     })
     .catch((err) => console.log(err));
 });
 
 // GET '/group'
 router.get('/', ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render('group/groups');
+  console.log('In /group');
   Group.find({ users: req.user._id })
     .then((groups) => {
-      console.log('GROUPS: ' + groups);
-      res.render('/group/groups', { groupList: groups });
+      res.render('group/groups', { groupList: groups });
     })
     .catch((err) => console.log(err));
 });

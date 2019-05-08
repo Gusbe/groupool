@@ -16,7 +16,11 @@ const User = require('./../models/user.js');
 
 // GET '/login'
 router.get('/login', (req, res, next) => {
-  res.render('login');
+  if (req.user) {
+    res.redirect('/group');
+  } else {
+    res.render('login');
+  }
 });
 
 // POST '/login'
@@ -69,7 +73,8 @@ router.post('/signup', (req, res, next) => {
 
 // GET '/logout'
 router.get('/logout', (req, res, next) => {
-  // Close the session. Redirect to login page
+  req.logout();
+  res.redirect('/');
 });
 
 // GET '/'

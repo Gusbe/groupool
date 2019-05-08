@@ -1,0 +1,16 @@
+<div class="container" >
+  
+<h2 class="title">{{group.name}} group</h2>
+
+
+{{#if group.message}}
+  <div class="container-group">
+    <p>The group </p>
+  </div>
+{{else}}
+  <div class="container-group">
+    <form action="/group/{{group._id}}/remove" method="post">
+      <button  button class="btn" type="submit">Remove the group {{group.name}}</button>
+    </form>
+  </div>
+{{/if}}
