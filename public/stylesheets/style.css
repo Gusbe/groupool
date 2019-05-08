@@ -254,6 +254,16 @@ a {
 .teamName {
   font-size: 17px;
 }
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.score-list{
+  font-size: 22px;
+}
+
 
 @media screen and (max-width:640px) {
   /* reglas CSS */

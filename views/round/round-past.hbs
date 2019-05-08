@@ -1,5 +1,5 @@
-<div>
-  <h2>Round {{roundNumber}}</h2>
+<div class="container">
+  <h2 class="title">Round {{roundNumber}}</h2>
   <h3>See results</h3>
 
   <select name="rounds-past" size="3">
@@ -15,21 +15,23 @@
 {{/each}}
 
 
-<div>
+<div class="container-group">
 
   {{#each gameList}}
 
-    <div>
-      <div>
-        <img src="" alt="">
-        <p>{{this.team_local}}</p>
+    <div class="match">
+      <div class="team1">
+        <img src="{{this.picture_local}}" alt="">
+        <p class="teamName">{{this.team_local}}</p>
       </div>
-      <div>
-        <p>{{this.goals_local}} - {{this.goals_visitor}}</p>
+
+      <div class="pool">
+        <p class="prediction">{{this.goals_local}} - {{this.goals_visitor}}</p>
       </div>
-      <div>
-        <img src="" alt="">
-        <p>{{this.team_visitor}}</p>
+
+      <div class="team2">
+        <img src="{{this.picture_visitor}}" alt="">
+        <p class="teamName">{{this.team_visitor}}</p>
       </div>
     </div>
 
@@ -38,16 +40,25 @@
 </div>
 
 
-  <h2>Raking Round x</h2>
+  <h2>Raking Round {{roundNumber}}</h2>
 
 
- <ol>
+ <ol class="score-list">
   {{#each userList}}
  
-    <li><p>{{this.username}}</p><p>{{puntos}}</p></li>
+  <li>
+    <div class="score-row">
+      <div class="score-half-div"><p>{{this.username}}</p></div>
+      <div class="score-half-div"><p>Hits - {{this.score}}</p></div>
+    </div>
+  </li>
     
   {{/each}}
   </ol>
+
+  <a href="/group/{{groupId}}">
+    <button class="btn-group2" type="button">Return to Rounds</button>
+  </a>
 
 
 </div>

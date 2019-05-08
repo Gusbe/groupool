@@ -45,7 +45,7 @@ router.get('/:roundNumber/:groupId', ensureLogin.ensureLoggedIn(), (req, res, ne
           }
         ];
 
-        res.render('round/round-past', { gameList: game, userList: users });
+        res.render('round/round-past', { gameList: game, userList: users, roundNumber });
 
         //
         //
@@ -118,8 +118,8 @@ router.get('/:roundNumber/:groupId', ensureLogin.ensureLoggedIn(), (req, res, ne
 });
 
 // POST '/round/:id'
-router.post('/:roundNumber', ensureLogin.ensureLoggedIn(), (req, res, next) => {
-  const { roundNumber } = req.params;
+router.post('/:roundNumber/:groupId', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+  const { roundNumber, groupId } = req.params;
   const { game0, game1, game2, game3, game4, game5, game6, game7, game8, game9 } = req.body;
 
   if (game0 === undefined || game1 === undefined || game2 === undefined || game3 === undefined || game4 === undefined ||
@@ -133,7 +133,7 @@ router.post('/:roundNumber', ensureLogin.ensureLoggedIn(), (req, res, next) => {
         game.forEach((match, i) => {
           Bet.create({ user: req.user._id, result: arrayResults[i], game: match._id, round: roundNumber })
             .then(() => {
-              res.redirect(`/round/${roundNumber}`);
+              res.redirect(`/round/${roundNumber}/${groupId}`);
             })
             .catch((err) => console.log(err));
         });
