@@ -22,12 +22,12 @@ router.get('/:roundNumber', ensureLogin.ensureLoggedIn(), (req, res, next) => {
             if (counter === 0) {
               res.render('round/round-next', { gameList: game, roundNumber });
             } else {
-              console.log('req.user._id: ' + req.user._id);
-              console.log('roundNumber: ' + roundNumber);
-
               Bet.find({ $and: [{ user: req.user._id }, { round: roundNumber }] })
                 .then((bets) => {
-                  res.render('round/round-next-sended', { gameList: game, roundNumber, betList: bets });
+                  game.forEach((element, i) => {
+                    element.result = bets[i].result;
+                  });
+                  res.render('round/round-next-sended', { gameList: game, roundNumber });
                 })
                 .catch();
             }
