@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Games = require('../models/game');
 
-mongoose.connect(`mongodb://localhost/groupool`);
+mongoose.connect(process.env.MONGODB_URI);
 
 const gamesArray = [
   {

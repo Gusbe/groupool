@@ -5,11 +5,12 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let session = require('express-session');
 let mongoose = require('mongoose');
+require('dotenv').config();
 
 let indexRouter = require('./routes/index');
 
 // Connection mongoDB
-mongoose.connect('mongodb://localhost/groupool')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to mongo!'))
   .catch(() => console.log('Problem connecting with mongo...'));
 
