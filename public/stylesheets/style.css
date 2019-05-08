@@ -88,10 +88,6 @@ h1{
   text-align: center;
 }
 .container-login{
-
- 
-
-  
   display: flex;
   flex-flow: column wrap;
   flex-wrap: wrap;
@@ -215,11 +211,11 @@ a {
 }
 
 .match {
-  position: relative;
-  width: 100%;
   
+  width: 100%;
   display: flex;
   align-content: center;
+  justify-content: center;
   border: 1px solid rgba(111, 109, 109, 0.762);
   border-radius: 5px;
   margin:30px;
@@ -242,9 +238,15 @@ a {
   width: 33%;
 }
 .pool{
-  position: relative;
-  top:33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.prediction {
+  font-size: 40px;
+}
+
 .team2 {
   margin: 20px;
   width: 33%;
