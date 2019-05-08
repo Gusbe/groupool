@@ -73,7 +73,8 @@ router.post('/signup', (req, res, next) => {
 
 // GET '/logout'
 router.get('/logout', (req, res, next) => {
-  // Close the session. Redirect to login page
+  req.logout();
+  res.redirect('/');
 });
 
 // GET '/'
