@@ -3,11 +3,9 @@
     
     <div class="container-group">
       
-      
-       <div><button class="btn-group2" ><a href="/group/_id">Pachanga</a></button></div>
-       <div><button class="btn-group2" ><a href="/group/_id">Pachanga</a></button></div>
-       <div><button class="btn-group2" ><a href="/group/_id">Pachanga</a></button></div>
-      
+      {{#each groupList}}
+       <div><button class="btn-group2" ><a href="/group/{{this._id}}">{{this.name}}</a></button></div>
+      {{/each}}      
       
     </div>
 
