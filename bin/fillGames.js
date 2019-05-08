@@ -33,10 +33,8 @@ Users.create(usersArray, (err) => {
 const gamesArray = [
   {
     round: 37,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/347.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/712.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Athletic Club',
     team_visitor: 'RC Celta',
     date: '2019-05-12'
@@ -44,71 +42,71 @@ const gamesArray = [
   {
     round: 37,
     picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/1102.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Atletico de Madrid',
     team_visitor: 'Sevilla',
     date: '2019-05-12'
   },
   {
     round: 37,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/429.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/1217.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'FC Barcelona',
     team_visitor: 'Getafe FC',
     date: '2019-05-12'
   },
   {
     round: 37,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/486.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/1339.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Real Betis',
     team_visitor: 'SD Huesca',
     date: '2019-05-12'
   },
   {
     round: 37,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/1236.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/1547.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Girona FC',
     team_visitor: 'Levante UD',
     date: '2019-05-12'
   },
   {
     round: 37,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/2080.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/2654.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Rayo Vallecano',
     team_visitor: 'Real Valladolid',
     date: '2019-05-12'
   },
   {
     round: 37,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/2647.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/137.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Valencia CF',
     team_visitor: 'D. Alaves',
     date: '2019-05-12'
   },
   {
     round: 37,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/2716.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/957.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Villareal CF',
     team_visitor: 'SD Eibar',
     date: '2019-05-12'
   },
   {
     round: 37,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/1535.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/998.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'CD Leganes',
     team_visitor: 'RCD Espanyol',
     date: '2019-05-12'
   },
   {
     round: 37,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/2120.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/2107.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Real Sociedad',
     team_visitor: 'Real Madrid',
     date: '2019-05-12'
@@ -123,8 +121,8 @@ Games.create(gamesArray, (err) => {
 const gamesArrayPast = [
   {
     round: 36,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/1102.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/1535.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Sevilla FC',
     team_visitor: 'CD Leganes',
     goals_local: 0,
@@ -134,8 +132,8 @@ const gamesArrayPast = [
   },
   {
     round: 36,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/1547.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/2080.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Levante UD',
     team_visitor: 'Rayo Vallecano',
     goals_local: 4,
@@ -145,7 +143,7 @@ const gamesArrayPast = [
   },
   {
     round: 36,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/998.jpg?size=60x&ext=png&lossy=1&1',
     picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'RCD Espanyol',
     team_visitor: 'Atletico de Madrid',
@@ -156,8 +154,8 @@ const gamesArrayPast = [
   },
   {
     round: 36,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/137.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/2120.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'D. Alaves',
     team_visitor: 'Real Sociedad',
     goals_local: 0,
@@ -167,8 +165,8 @@ const gamesArrayPast = [
   },
   {
     round: 36,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/712.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/429.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'RC Celta',
     team_visitor: 'FC Barcelona',
     goals_local: 2,
@@ -178,8 +176,8 @@ const gamesArrayPast = [
   },
   {
     round: 36,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/1217.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/1236.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Getafe CF',
     team_visitor: 'Girona FC',
     goals_local: 2,
@@ -189,8 +187,8 @@ const gamesArrayPast = [
   },
   {
     round: 36,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/957.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/486.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'SD Eibar',
     team_visitor: 'Real Betis',
     goals_local: 1,
@@ -200,8 +198,8 @@ const gamesArrayPast = [
   },
   {
     round: 36,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/2107.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/2716.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Real Madrid',
     team_visitor: 'Villareal CF',
     goals_local: 3,
@@ -211,8 +209,8 @@ const gamesArrayPast = [
   },
   {
     round: 36,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/2654.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/347.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'Real Valladolid',
     team_visitor: 'Athletic Club',
     goals_local: 1,
@@ -222,8 +220,8 @@ const gamesArrayPast = [
   },
   {
     round: 36,
-    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
-    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/369.jpg?size=60x&ext=png&lossy=1&1',
+    picture_local: 'https://thumb.resfu.com/img_data/escudos/medium/1339.jpg?size=60x&ext=png&lossy=1&1',
+    picture_visitor: 'https://thumb.resfu.com/img_data/escudos/medium/2647.jpg?size=60x&ext=png&lossy=1&1',
     team_local: 'SD Huesca',
     team_visitor: 'Valencia',
     goals_local: 2,
