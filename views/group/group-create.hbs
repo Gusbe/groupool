@@ -1,20 +1,25 @@
 <div class="container" >
-  <h2 class="title">Create Group</h2>
-  <div class="container-group">
+  
+  
+
+  {{#if groupName }}
+  <div>
+  <h2  class="title">group created</h2>
+  <img src="" alt="">
+  <h3>Groupname: {{groupName}}</h3>
+  <h3> PIN: {{pin}}</h3>
+  </div>
+
+{{else}}
+<h2 class="title">Create Group</h2>
+<div class="container-group">
     <form action="/group/create" method="post">
     <input class="input" type="text" name="groupname" placeholder="name of the group">
   </div>
   <button  button class="btn" type="submit">Create your new group!</button>
   </form>
 
-  {{#if groupName }}
-  <div>
-  <h3>group created</h3>
-  <img src="" alt="">
-  <h2>Groupname: {{groupName}}</h2>
-  <h4> PIN: {{pin}}</h4>
-  </div>
-{{/if}}
+  {{/if}}
 
 </div>
 
