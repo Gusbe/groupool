@@ -14,7 +14,7 @@ let users = [
     score: 9
   },
   {
-    username: 'Damian',
+    username: 'Ronaldinho',
     score: 8
   },
   {
