@@ -2,24 +2,16 @@
   <h2 class="title">Round {{roundNumber}}</h2>
   <h3>See results</h3>
 
-  <select name="rounds-past" size="3">
-
-    <option>Round1</option>
-    <option>Round2</option>
-    <option>Round3</option>
-
-  </select>
-
-{{#each userList}}
-  {{this.username}}........{{this.score}}
-{{/each}}
 
 
 <div class="container-group">
 
-  {{#each gameList}}
+  <h4>Your score: {{score}}</h4>
 
-    <div class="match">
+  {{#each gameList}}
+  
+
+    <div class="match{{#if this.resultBet}}-{{#if this.win}}green{{else}}red{{/if}}{{/if}}">
       <div class="team1">
         <img src="{{this.picture_local}}" alt="">
         <p class="teamName">{{this.team_local}}</p>
@@ -27,6 +19,7 @@
 
       <div class="pool">
         <p class="prediction">{{this.goals_local}} - {{this.goals_visitor}}</p>
+        {{#if this.resultBet}}<p class="prediction">({{this.resultBet}})</p>{{/if}}
       </div>
 
       <div class="team2">
