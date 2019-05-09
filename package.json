@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start-dev": "nodemon ./bin/www",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "seed": "node ./bin/fillGames"
   },
   "engines": {
     "node": "11.14.0",
