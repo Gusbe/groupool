@@ -272,6 +272,13 @@ a {
   font-size: 40px;
 }
 
+.your-bet {
+  font-size: 30px;
+  position: relative;
+  top: 50px;
+  left: -55px;
+}
+
 .team2 {
   margin: 20px;
   width: 33%;
