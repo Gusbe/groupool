@@ -155,4 +155,9 @@ Repository link:
 
 ### Slides
 
-[Slides Link](https://docs.google.com/)
+[Slides Link](<https://docs.google.com/presentation/d/186eToj1yVpao763ZHkkzjG-qDM3fbzf2VmzJVm122ms/edit#slide=id.g59e26f77a5_0_40>)
+
+
+### App
+
+[App Link](<http://ironhack-groupool.herokuapp.com>)
