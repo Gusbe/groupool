@@ -41,6 +41,7 @@ router.get('/signup', (req, res, next) => {
 
 // POST '/signup'
 router.post('/signup', (req, res, next) => {
+  console.log(1);
   if (req.user) {
     res.redirect('/group');
   } else {
@@ -51,11 +52,13 @@ router.post('/signup', (req, res, next) => {
     } else {
       User.findOne({ username: username })
         .then((user) => {
+          console.log(2);
           if (!user) {
             // if (zxcvbn(password).score < 3) {
             if (false) { // Change to make the score validation works
               res.render('signup', { errorMessage: 'The password is too weak' });
             } else {
+              console.log(3);
               const salt = bcrypt.genSaltSync(10);
               const hashedPassword = bcrypt.hashSync(password, salt);
 
@@ -66,7 +69,7 @@ router.post('/signup', (req, res, next) => {
           } else {
             res.render('signup', { errorMessage: 'The username is already taken' });
           }
-        });
+        }).catch((err) => console.log(err));
     }
   }
 });
