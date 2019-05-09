@@ -60,7 +60,7 @@ router.get('/:roundNumber/:groupId', ensureLogin.ensureLoggedIn(), (req, res, ne
       //       .catch((err) => console.log(err));
       //   });
       //
-      if (dateRound >= Date.now()) {
+      if (dateRound <= Date.now()) {
         // Passed round
         let betPromises = game.map((singleGame, i) => {
           return Bet.find({ $and: [{ user: req.user._id }, { round: roundNumber }, { game: singleGame._id }] })
